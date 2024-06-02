@@ -20,7 +20,7 @@ public class CatalogInitialData : IInitialData
                 new Product()
                 {
                     Id = new Guid("5334c996-8457-4cf0-815c-ed2b77c4ff61"),
-                    Name = "IPhone X",
+                    Name = "Phone",
                     Description = "This phone is the company's biggest change to its flagship smartphone in years. It includes a borderless.",
                     ImageFile = "product-1.png",
                     Price = 950.00M,
@@ -29,7 +29,7 @@ public class CatalogInitialData : IInitialData
                 new Product()
                 {
                     Id = new Guid("c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914"),
-                    Name = "Samsung 10",
+                    Name = "PC",
                     Description = "This phone is the company's biggest change to its flagship smartphone in years. It includes a borderless.",
                     ImageFile = "product-2.png",
                     Price = 840.00M,
