@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Ordering.Application.Data;
 using Ordering.Infrastructure.Data.Interceptors;
 
 namespace Ordering.Infrastructure;
@@ -18,6 +19,8 @@ public static class DependencyInjection
             options.AddInterceptors(serviceProvider.GetServices<ISaveChangesInterceptor>());
             options.UseSqlServer(connection);
         });
+
+        services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
         return services;
     }
