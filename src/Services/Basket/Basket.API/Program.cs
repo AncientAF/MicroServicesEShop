@@ -1,8 +1,10 @@
 using BuildingBlocks.Exceptions.Handler;
+using BuildingBlocks.Messaging.MassTransit;
 using HealthChecks.UI.Client;
 using Marten.Events.Aggregation;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 var assembly = typeof(Program).Assembly;
@@ -45,6 +47,9 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
 
     return handler;
 });
+
+//Async Communication Services
+builder.Services.AddMessageBroker(builder.Configuration);
 
 //Cross-cutting services
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
